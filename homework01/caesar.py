@@ -1,17 +1,18 @@
 def encrypt_caesar(plaintext: str) -> str:
     """
-    # >>> encrypt_caesar("PYTHON")
-    # 'SBWKRQ'
-    # >>> encrypt_caesar("python")
-    # 'sbwkrq'
-    # >>> encrypt_caesar("Python3.6")
-    # 'Sbwkrq3.6'
-    # >>> encrypt_caesar("")
+    >>> encrypt_caesar("PYTHON")
+    'SBWKRQ'
+    >>> encrypt_caesar("python")
+    'sbwkrq'
+    >>> encrypt_caesar("Python3.6")
+    'Sbwkrq3.6'
+    >>> encrypt_caesar("")
     ''
     """
     ciphertext = ''
     for letter in list(plaintext):
         ordl = ord(letter)
+        # print(ordl)
         if 65 <= ordl <= 87:
             ciphertext += chr(ordl + 3)
         elif ordl == 88:
@@ -28,6 +29,8 @@ def encrypt_caesar(plaintext: str) -> str:
             ciphertext += 'b'
         elif ordl == 122:
             ciphertext += 'c'
+        else:
+            ciphertext += letter
 
     # PUT YOUR CODE HERE
     return ciphertext
@@ -35,13 +38,13 @@ def encrypt_caesar(plaintext: str) -> str:
 
 def decrypt_caesar(ciphertext: str) -> str:
     """
-    # >>> decrypt_caesar("SBWKRQ")
-    # 'PYTHON'
-    # >>> decrypt_caesar("sbwkrq")
-    # 'python'
-    # >>> decrypt_caesar("Sbwkrq3.6")
-    # 'Python3.6'
-    # >>> decrypt_caesar("")
+    >>> decrypt_caesar("SBWKRQ")
+    'PYTHON'
+    >>> decrypt_caesar("sbwkrq")
+    'python'
+    >>> decrypt_caesar("Sbwkrq3.6")
+    'Python3.6'
+    >>> decrypt_caesar("")
     ''
     """
     # PUT YOUR CODE HERE
@@ -53,19 +56,19 @@ def decrypt_caesar(ciphertext: str) -> str:
         if 68 <= ordl <= 90:
             plaintext += chr(ordl - 3)
         elif ordl == 67:
-            ciphertext += 'Z'   # Да-да, костыли, знаю
+            plaintext += 'Z'   # Да-да, костыли, знаю
         elif ordl == 66:
-            ciphertext += 'Y'
+            plaintext += 'Y'
         elif ordl == 65:
-            ciphertext += 'X'
+            plaintext += 'X'
         elif 100 <= ordl <= 121:
-            ciphertext += chr(ordl - 3)
+            plaintext += chr(ordl - 3)
         elif ordl == 99:
-            ciphertext += 'z'   # Да-да, костыли, знаю
+            plaintext += 'z'   # Да-да, костыли, знаю
         elif ordl == 98:
-            ciphertext += 'y'
+            plaintext += 'y'
         elif ordl == 97:
-            ciphertext += 'x'
+            plaintext += 'x'
+        else:
+            plaintext += letter
     return plaintext
-
-print(encrypt_caesar("PYTHON"))
