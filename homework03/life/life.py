@@ -1,11 +1,16 @@
 import copy
 import random
+from typing import Tuple, List
 
 import pygame
 from pygame.locals import *
 
 from homework03.life.life_with_classes import Cell
 
+
+Cell = Tuple[int, int]
+Cells = List[int]
+Grid = List[Cells]
 
 class GameOfLife:
 
@@ -46,6 +51,8 @@ class GameOfLife:
                 if event.type == QUIT:
                     running = False
             self.draw_lines()
+            self.draw_grid()
+            self.grid = self.get_next_generation()
             pygame.display.flip()
             clock.tick(self.speed)
         pygame.quit()
@@ -141,5 +148,6 @@ class GameOfLife:
 
 
 if __name__ == '__main__':
-    game = GameOfLife(320, 240, 20)
+    game = GameOfLife()#320, 240, 20)
+    game.grid = game.create_grid(True)
     game.run()
