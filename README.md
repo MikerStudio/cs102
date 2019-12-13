@@ -10,13 +10,8 @@
 
 | Number | Name | Python | GoLang |
 | ------ | ------ | ------ | ------ |
-| 01 | Encryption algorithms | ✓ | ×|
-| 02 | Sudoku Solver | ✓ | × |
-| 03 | Game «Life» | ✓ | × |
-| 04 | Work with VK API | ✓ | × |
-| 05 | Bot for messenger Telegram | ✓ | × |
-| 06 | Hacker News Personalization | × | × |
-| 07 | Note taking app | × | × |
-| 08 | Simple asynchronous server | × | × |
-| 09 | Simple asynchronous web framework | × | × |
-| 10 | Web Socket Chat | × | × |
+| 1 | Encryption algorithms | ✓ | ×|
+| 2 | Sudoku Solver | ✓ | × |
+| 3 | Game «Life» | ✓ | × |
+| 4 | Bot for messenger Telegram | ✓ | × |
+| 5 | Work with VK API | ✓ | × |
