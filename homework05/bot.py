@@ -161,8 +161,7 @@ if __name__ == "__main__":
     cnt = 15
 
     me_rod = \
-    get(DOMAIN + 'users.get', {'access_token': ACCESS_TOKEN, 'v': V, 'user_ids': user_id, 'name_case': 'gen'}).json()[
-        'response'][0]
+    get(DOMAIN + 'users.get', {'access_token': ACCESS_TOKEN, 'v': V, 'user_ids': user_id, 'name_case': 'gen'}).json()['response'][0]
 
     usernamerod = me_rod['first_name'] + ' ' + me_rod['last_name']
 
